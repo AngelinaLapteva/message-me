@@ -4,4 +4,7 @@ Rails.application.routes.draw do
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
   post 'message', to: 'messages#create'
+
+  #  we need to moun the route so user when logged it establish websoket connection for cha
+  mount ActionCable.server, at: '/cable'
 end
